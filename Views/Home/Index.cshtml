@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razor Fun</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Here are some delicious foods!</h1>
+            <hr class="my-4">
+            @{
+                var FoodList = new List<string>
+                {
+                    "Baja Burger",
+                    "Chicago Deep Dish",
+                    "Roasted Leg of Lamb",
+                    "Kung Pao Chicken",
+                    "Cobb Salad",
+                    "Corned Beef Sandwich"
+                };
+
+                @foreach (var food in FoodList)
+                {
+                    if (food[0] == 'C')
+                    {
+                        <p style="color: red;">@food</p>
+                    }
+                    else
+                    {
+                        <p>@food</p>
+                    }
+                }
+            }
+        </div>
+    </div>
+</body>
+</html>
